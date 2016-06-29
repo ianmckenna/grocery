@@ -13,19 +13,38 @@ class Ingredient {
 	 * 
 	 */
 	
-	int ingShelfLife;//in days
-	double ingQuantity;
+	int shelfLife;//in days
+	double quantity;
+	boolean expired;
+	String name;
 	
-	String ingName;
 	
-	
-
-	
-	public void setAmount(double newWeight) {
-		this.ingQuantity = newWeight;
+	public Ingredient(String ingName, double ingQuantity)
+	{
+		name = ingName;
+		quantity = ingQuantity;
+	}
+	public void setShelfLife(int newShelfLife){
+		this.shelfLife = newShelfLife;
+	}
+	public int getShelfLife(){
+		return shelfLife;
+	}
+	public void setQuantity(double newWeight) {
+		this.quantity = newWeight;
 	}
 	public void setName(String newName) {
-		this.ingName = newName;
+		this.name = newName;
+	}
+	public double getQuantity(){
+		return quantity;
+	}
+	public String getName(){
+		return name;
+	}
+	public boolean isGood(){
+		return expired;
 	}
 
 }
+
